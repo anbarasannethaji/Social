@@ -90,7 +90,7 @@ likeElements.forEach((likeElement) => {
   likeElement.addEventListener("dblclick", likeHandler);
 });
 */
-/*
+
 const like = document.querySelectorAll(".like");
 action = () =>{
   const solid = document.querySelectorAll(".fa-solid.fa-heart");
@@ -106,25 +106,4 @@ action = () =>{
 like.forEach((likes)=>{
   likes.addEventListener("dblclick",action);
 }); 
-*/
-const likeElements = document.querySelectorAll(".like");
 
-likeElements.forEach((likeElement) => {
-  // Define a variable to keep track of the heart state (active/inactive)
-  let isActive = false;
-
-  likeElement.addEventListener("dblclick", () => {
-    // Toggle the "active" class on the clicked "like" element
-    isActive = !isActive;
-    likeElement.classList.toggle("active", isActive);
-
-    // If the heart state is active, show the solid heart and hide the regular heart
-    if (isActive) {
-      likeElement.querySelector(".fa-solid.fa-heart").style.display = "block";
-      likeElement.querySelector(".fa-regular.fa-heart").style.display = "none";
-    } else { // Otherwise, show the regular heart and hide the solid heart
-      likeElement.querySelector(".fa-solid.fa-heart").style.display = "none";
-      likeElement.querySelector(".fa-regular.fa-heart").style.display = "block";
-    }
-  });
-});
